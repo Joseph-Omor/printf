@@ -5,7 +5,6 @@
 /**
  * _printf - A function that prints what is given
  * @format: a string argument
- * @char: character notation
  *
  *Return: Number of characters printed
  */
@@ -13,18 +12,20 @@ int _printf(const char *format, ...)
 {
 	int i, num_characters_printed;
 	va_list args;
+	
 	/*Declare and initialize array of structure 'specifiers[]' */
 	FormatSpecifier specifiers[] = {
 		{print_char, 'c'},
-		{print_string 's'},
+		{print_string, 's'},
 		{print_double_percent, '%'},
 		{NULL, '\0'}
 	};
 
+
 	/*check that format is not NULL */
-	if (*format == NULL)
+	if (format == NULL)
 	{
-		RETURN (-1);
+		return (-1);
 	}
 
 	/* initialize the variable argument 'args' */
@@ -51,20 +52,16 @@ int _printf(const char *format, ...)
 			 */
 			for (i = 0; specifiers[i].handle != NULL; i++)
 			{
-				if (*format == specifier[i].specifier)
+				if (*format == specifiers[i].specifier)
 				{
 					num_characters_printed += specifiers[i].handle(args);
 					break;
 				}
 			}
-
-			/*if (!specifier_found)
-			{
-				break;
-			} */
 		}
+		format++;
 	}
-		va_end(args);
-		return (num_characters_printed);
+	va_end(args);
+	return (num_characters_printed);
 
 }
