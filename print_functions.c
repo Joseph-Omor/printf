@@ -2,7 +2,7 @@
 
 /**
  * print_char - prints character
- * @args: argment to print 
+ * @args: argment to print
  *
  * Return: 1.
  */
@@ -43,9 +43,9 @@ int print_string(va_list args)
  *
  * Return: 1.
  */
-int print_double_percent( va_list args)
+int print_double_percent(va_list args)
 {
-	(void )args;
+	(void)args;
 
 	write(1, "%%", 1);
 	return (1);

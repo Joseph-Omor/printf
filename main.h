@@ -9,6 +9,11 @@ int print_string(va_list args);
 int print_double_percent(va_list args);
 int _printf(const char *format, ...);
 
+/**
+ * struct specifiers - A structure with two members.
+ * @handle: a function pointer to handle print for specifier
+ * @specifier: a function pointer to handle print for specifier
+ */
 typedef struct specifiers
 {
 	int (*handle)(va_list);

@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	int i, num_characters_printed;
 	va_list args;
-	
+
 	/*Declare and initialize array of structure 'specifiers[]' */
 	FormatSpecifier specifiers[] = {
 		{print_char, 'c'},
@@ -46,7 +46,8 @@ int _printf(const char *format, ...)
 				break;
 			}
 
-			/**pass the structure named specifier and,
+			/**
+			 * pass the structure named specifier and,
 			 * compare the current character in format with the specifier
 			 * to select function to handle print
 			 */
