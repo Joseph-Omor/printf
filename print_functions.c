@@ -55,7 +55,7 @@ int print_double_percent(va_list args)
  * print_int - a function that print digit
  *
  * Return: digits
- *
+ */
 int print_int(va_list args) 
 {
 	int i; 
@@ -66,11 +66,11 @@ int print_int(va_list args)
 	  
 	if (num < 0) 
 	{
-		write(1, "-", 1); **Print negativesign for negative numbers 
-		num = -num; ** convert negative number to positive */
-	
+		write(1, "-", 1); /* Print negativesign for negative numbers*/ 
+		num = -num; /* convert negative number to positive */
+	}	
 
-	/** count the number of digits *
+	/* count the number of digits */
 	if (num == 0) 
 	{
 		write(1, "0", 1);
@@ -83,8 +83,8 @@ int print_int(va_list args)
 		digits++;
 	}
 
-	convert digits to characters and point
-	num_str[digits];
+	/* convert digits to characters and point */
+	num_str[digits] = '\0';
 	for (i = digits - 1; i >= 0; i--) 
 		{
 			num_str[i] = '0' + (num % 10);
@@ -93,4 +93,4 @@ int print_int(va_list args)
 
 	write(1, num_str, digits);
 	return (digits);
-}*/
+}
