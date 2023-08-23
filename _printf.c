@@ -17,8 +17,6 @@ int _printf(const char *format, ...)
 	FormatSpecifier specifiers[] = {
 		{print_char, 'c'},
 		{print_string, 's'},
-		{print_int, 'd'},
-		{print_int, 'i'},
 		{print_double_percent, '%'},
 		{NULL, '\0'}
 	};
