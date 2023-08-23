@@ -56,28 +56,28 @@ int print_double_percent(va_list args)
  *
  * Return: digits
  */
-int print_int(va_list args) 
+int print_int(va_list args)
 {
-	int i; 
+	int i;
 	int num = va_arg(args, int);
 	int temps = num;
 	int digits = 0;
 	char num_str[1023];
-	  
-	if (num < 0) 
+
+	if (num < 0)
 	{
-		write(1, "-", 1); /* Print negativesign for negative numbers*/ 
+		write(1, "-", 1); /* Print negativesign for negative numbers*/
 		num = -num; /* convert negative number to positive */
-	}	
+	}
 
 	/* count the number of digits */
-	if (num == 0) 
+	if (num == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
 
-	while (temps > 0) 
+	while (temps > 0)
 	{
 		temps /= 10;
 		digits++;
@@ -85,7 +85,7 @@ int print_int(va_list args)
 
 	/* convert digits to characters and point */
 	num_str[digits] = '\0';
-	for (i = digits - 1; i >= 0; i--) 
+	for (i = digits - 1; i >= 0; i--)
 		{
 			num_str[i] = '0' + (num % 10);
 			num /= 10;
